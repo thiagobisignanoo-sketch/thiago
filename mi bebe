@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>❤️ Romanella ❤️</title>
+<style>
+body{margin:0;font-family:Arial;background:linear-gradient(#ffb6d9,#ffddee);color:#fff;text-align:center;overflow-x:hidden}
+section{padding:40px 20px}
+h1,h2{margin:10px}
+.card{background:rgba(255,255,255,.2);margin:20px auto;padding:20px;border-radius:20px;max-width:700px}
+#time{display:flex;justify-content:center;gap:15px;font-size:20px;font-weight:bold;flex-wrap:wrap}
+.g img,.dogs img{width:140px;height:140px;object-fit:cover;border-radius:15px;margin:8px;transition:.3s}
+img:hover{transform:scale(1.08)}
+button{padding:12px 25px;border:none;border-radius:30px;background:#ff4f93;color:#fff;font-size:18px;cursor:pointer}
+button:hover{transform:scale(1.05)}
+.heart{position:fixed;color:#ff3b87;animation:f 6s linear infinite}
+@keyframes f{0%{transform:translateY(100vh)}100%{transform:translateY(-120vh)}}
+</style>
+</head>
+<body>
+
+<audio controls loop>
+<source src="cancion.mp3" type="audio/mpeg">
+</audio>
+
+<section>
+<h1>❤️ Para Romanella ❤️</h1>
+<p>Sos la mejor parte de mi vida. Gracias por hacerme tan feliz.</p>
+</section>
+
+<section class="card">
+<h2>⏳ Juntos desde 17/04/2026</h2>
+<div id="time">
+<div><span id="d">0</span><br>Días</div>
+<div><span id="h">0</span><br>Horas</div>
+<div><span id="m">0</span><br>Min</div>
+<div><span id="s">0</span><br>Seg</div>
+</div>
+</section>
+
+<section class="card">
+<h2>📸 Nuestra Galería</h2>
+<div class="g">
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
+</div>
+</section>
+
+<section class="card">
+<h2>💌 Carta</h2>
+<p>
+Romanella, gracias por cada abrazo, cada sonrisa y cada momento juntos.
+Sos mi lugar favorito y la persona con la que quiero compartir toda mi vida.
+Te amo hoy, mañana y siempre. ❤️
+</p>
+</section>
+
+<section class="card">
+<h2>🐶 Nuestros bebés</h2>
+<div class="dogs">
+<img src="milo.jpg"><p>Milo</p>
+<img src="mini.jpg"><p>Mini</p>
+<img src="neron.jpg"><p>Nerón</p>
+<img src="simba.jpg"><p>Simba</p>
+</div>
+</section>
+
+<section class="card">
+<h2>🌎 Nuestro futuro</h2>
+<p>🏡 Casa • 💍 Casamiento • ✈️ Viajes • 👶 Familia • ❤️ Envejecer juntos</p>
+</section>
+
+<section class="card">
+<h2>💍 ¿Querés seguir conmigo para siempre?</h2>
+<button onclick="si()">❤️ Sí, para siempre ❤️</button>
+<h2 id="msg"></h2>
+</section>
+
+<script>
+const f=new Date("2026-04-17T00:00:00");
+setInterval(()=>{
+let x=new Date()-f;
+document.getElementById("d").innerHTML=Math.floor(x/86400000);
+document.getElementById("h").innerHTML=Math.floor(x/3600000)%24;
+document.getElementById("m").innerHTML=Math.floor(x/60000)%60;
+document.getElementById("s").innerHTML=Math.floor(x/1000)%60;
+},1000);
+
+function si(){
+document.getElementById("msg").innerHTML="❤️ Te amo para toda la vida Romanella ❤️";
+for(let i=0;i<40;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(20+Math.random()*25)+"px";
+h.style.animationDuration=(3+Math.random()*3)+"s";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+}
+}
+</script>
+
+</body>
+</html>
